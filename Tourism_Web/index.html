@@ -1,0 +1,99 @@
+from pathlib import Path
+
+html = r'''<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#102b3f">
+  <title>Personal Portfolio | Tourism Management</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+  <style>
+    :root{--navy:#102b3f;--blue:#1f6680;--gold:#d7ad63;--cream:#f7f5f0;--ink:#20313b;--muted:#687780}
+    *{box-sizing:border-box} html{scroll-behavior:smooth}
+    body{margin:0;font-family:Arial,Helvetica,sans-serif;color:var(--ink);background:var(--cream);line-height:1.6}
+    a{color:inherit;text-decoration:none}
+    header{position:sticky;top:0;z-index:5;background:rgba(16,43,63,.96);color:white;padding:15px 7%;display:flex;align-items:center;justify-content:space-between}
+    .logo{font-weight:800;letter-spacing:2px}.nav{display:flex;gap:25px;font-size:.92rem}.nav a:hover{color:var(--gold)}
+    .hero{min-height:590px;padding:90px 8%;display:grid;grid-template-columns:1.3fr .7fr;gap:40px;align-items:center;background:linear-gradient(120deg,#102b3f 0%,#174c64 100%);color:white}
+    .eyebrow{color:var(--gold);text-transform:uppercase;letter-spacing:3px;font-size:.78rem;font-weight:bold}
+    h1{font-size:clamp(2.5rem,6vw,4.8rem);line-height:1.06;margin:16px 0}.hero p{max-width:650px;color:#e1e9ed;font-size:1.08rem}
+    .actions{display:flex;gap:14px;flex-wrap:wrap;margin-top:28px}.btn{padding:12px 22px;border-radius:30px;font-weight:bold;border:1px solid var(--gold);display:inline-block}.primary{background:var(--gold);color:#172c38}.secondary{color:white}
+    .photo{width:min(300px,80vw);aspect-ratio:4/5;border:2px dashed rgba(255,255,255,.55);border-radius:48% 48% 18px 18px;display:grid;place-items:center;text-align:center;padding:25px;color:#e5edf0;background:rgba(255,255,255,.07);justify-self:center}
+    section{padding:75px 8%}.section-title{font-size:2rem;color:var(--navy);margin:0 0 10px}.sub{color:var(--muted);margin:0 0 30px}
+    .about-grid,.two-col{display:grid;grid-template-columns:1fr 1fr;gap:35px;align-items:start}
+    .panel{background:white;padding:27px;border-radius:16px;box-shadow:0 8px 28px rgba(16,43,63,.06)}
+    .chips{display:flex;flex-wrap:wrap;gap:10px}.chip{background:#e8f0f2;color:#174c64;padding:8px 13px;border-radius:20px;font-size:.9rem}
+    .timeline{border-left:3px solid var(--gold);padding-left:22px}.timeline h3{margin:0;color:var(--navy)}.timeline p{margin:6px 0 22px;color:var(--muted)}
+    .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.card{background:white;border-radius:16px;padding:23px;box-shadow:0 8px 28px rgba(16,43,63,.06)}.card .number{font-size:1.8rem;color:var(--gold);font-weight:bold}
+    .contact{background:var(--navy);color:white}.contact .section-title{color:white}.contact .sub{color:#d5e0e5}.contact a{color:var(--gold)}
+    footer{text-align:center;background:#0b2030;color:#b8c7ce;padding:20px;font-size:.85rem}
+    @media(max-width:760px){header{padding:14px 5%;flex-wrap:wrap}.nav{gap:13px;flex-wrap:wrap;font-size:.82rem}.hero{grid-template-columns:1fr;padding:65px 7%;text-align:center}.hero p{margin:auto}.actions{justify-content:center}.photo{grid-row:1;width:210px}.about-grid,.two-col,.cards{grid-template-columns:1fr}section{padding:58px 7%}}
+  </style>
+</head>
+<body>
+<header>
+  <a class="logo" href="#home">MY PORTFOLIO</a>
+  <nav class="nav"><a href="#about">About</a><a href="#education">Education</a><a href="#skills">Skills</a><a href="#experience">Experience</a><a href="#contact">Contact</a></nav>
+</header>
+<main>
+  <section class="hero" id="home">
+    <div>
+      <div class="eyebrow">Tourism • Travel • Hospitality</div>
+      <h1>Hello, I'm<br><span style="color:#e4bd78">Leslie Ann Arbues</span></h1>
+      <p>A dedicated Tourism Management student who enjoys helping people, learning about different cultures, and creating positive customer experiences. I am eager to grow in the travel and hospitality industry.</p>
+      <div class="actions"><a class="btn primary" href="#about">Explore My Portfolio</a><a class="btn secondary" href="#contact">Contact Me</a></div>
+    </div>
+    <div class="photo">
+      <img src="./images.jpg/leslie.jpg" alt="Leslie Ann A Arbues">
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="about-grid">
+      <div><div class="eyebrow">Get to know me</div><h2 class="section-title">About Me</h2>
+        <p>I am a fourth-year Bachelor of Science in Tourism Management student at STI College – Rosario, Cavite. I am hardworking, adaptable, and willing to learn. I have experience assisting with US visa-processing inquiries, looking for potential clients, and selling clothing and beauty products online.</p>
+        <p>My goal is to build a career in the tourism industry, especially in travel, hospitality, and cabin crew services.</p>
+      </div>
+      <div class="panel"><h3 style="margin-top:0;color:#102b3f">Career Objective</h3><p>To gain practical experience, improve my communication and service skills, and provide friendly and professional assistance to people from different backgrounds.</p></div>
+    </div>
+  </section>
+
+  <section id="education" style="background:#eef2f2">
+    <div class="eyebrow">My background</div><h2 class="section-title">Education</h2>
+    <div class="panel timeline">
+      <h3>Bachelor of Science in Tourism Management</h3>
+      <p>STI College – Rosario, Cavite<br>Fourth-year student</p>
+    </div>
+  </section>
+
+  <section id="skills">
+    <div class="eyebrow">What I can offer</div><h2 class="section-title">Skills</h2><p class="sub">Skills I continue to develop through school, work, and daily experiences.</p>
+    <div class="chips">
+      <span class="chip">Communication</span><span class="chip">Customer Service</span><span class="chip">Teamwork</span><span class="chip">Adaptability</span><span class="chip">Patience</span><span class="chip">Interpersonal Skills</span><span class="chip">Client Assistance</span><span class="chip">Online Selling</span><span class="chip">Willingness to Learn</span>
+    </div>
+  </section>
+
+  <section id="experience" style="background:#eef2f2">
+    <div class="eyebrow">Learning through experience</div><h2 class="section-title">Experience & Activities</h2>
+    <div class="cards">
+      <article class="card"><div class="number">01</div><h3>Client Assistance</h3><p>Assisted with US visa-processing inquiries and helped identify potential clients.</p></article>
+      <article class="card"><div class="number">02</div><h3>Online Selling</h3><p>Promoted and sold clothing and beauty products online while communicating with potential buyers.</p></article>
+      <article class="card"><div class="number">03</div><h3>Tourism Studies</h3><p>Developing knowledge and skills related to travel, tourism, hospitality, and guest service.</p></article>
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <div class="eyebrow">Let's connect</div><h2 class="section-title">Contact Me</h2><p class="sub">I would be happy to connect and discuss opportunities for learning and professional growth.</p>
+    <p><strong>Email:</strong> <a href="mailto:your.email@example.com">LeslieAnn.19.doc@gmail.com</a></p>
+    <p><strong>Phone:</strong> 09166883090</p>
+    <p><strong>Location:</strong> Cavite, Philippines</p>
+  </section>
+</main>
+<footer>© 2026 Leslie Ann Arbues • Personal Digital Portfolio</footer>
+</body>
+</html>'''
+path = Path("/mnt/data/digital_portfolio_website.html")
+path.write_text(html, encoding="utf-8")
+print(path)
